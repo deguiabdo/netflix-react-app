@@ -1,11 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import SingIn from "./components/SingIn";
+import SingUp from "./components/SingUp";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className='App '>
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/SingIn' element={<SingIn />}></Route>
+        <Route path='/SingUp' element={<SingUp />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
