@@ -5,7 +5,7 @@ import requests from '../Requests'
 function Home() {
     
   return (
-    <div className=' overflow-x-auto'>
+    <div className=' overflow-x-hidden'>
       <Main />
       <Categories cateName={"Trending"} apiUrl={requests.requestTrending} />
       <Categories cateName={"Upcoming"} apiUrl={requests.requestUpcoming} />

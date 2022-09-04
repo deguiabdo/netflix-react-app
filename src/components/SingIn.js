@@ -1,4 +1,5 @@
 import React from 'react'
+import {  Link } from "react-router-dom";
 import bg_img from "./assets/netflix-bg-img.jpg";
 function SingIn() {
   const [formData, setFormData] = React.useState({
@@ -19,17 +20,17 @@ function SingIn() {
     }
 
   return (
-    <div className='  h-screen w-full'>
+    <div className='  h-auto w-full'>
       <img
-        className=' object-fill w-full h-full'
+        className=' absolute top-0 object-fill w-full h-full'
         src={bg_img}
         alt='netflix-bg-img'
       />
       <div className=' grid place-items-center h-full w-full absolute top-0 bg-transparent'>
-        <div className='md:w-[450px] w-full h-[550px] grid place-items-center   items-start bg-black bg-opacity-[85%]'>
+        <div className='md:w-[450px] w-full mt-10 h-[500px] grid place-items-center   items-start bg-black bg-opacity-[85%]'>
           <form
             onSubmit={handelsubmit}
-            className='px-10 md:px-0 flex flex-col md:w-[280px] w-full text-white'
+            className='px-10 md:px-0 flex flex-col  md:w-[280px] w-full text-white'
           >
             <h1 className=' mt-12  text-3xl font-bold'>Sing Up</h1>
             <input
@@ -37,7 +38,7 @@ function SingIn() {
               placeholder=' Email'
               type='email'
               name='email'
-              value={formData.email}
+              value={formData?.email}
               onChange={handelForm}
             />
             <input
@@ -45,7 +46,7 @@ function SingIn() {
               placeholder=' Password'
               type='password'
               name='password'
-              value={formData.password}
+              value={formData?.password}
               onChange={handelForm}
             />
             <button className='w-full h-12 mt-8 rounded-md text-lg  font-bold bg-red-600'>
@@ -69,10 +70,9 @@ function SingIn() {
               <h1 className='text-gray-600 text-sm inline'>
                 Already subscribed to Netflix ?
               </h1>
-              <link></link>
-              <a className='ml-2' href='http://'>
-                Sing In
-              </a>
+              <Link to='/SingUp' className='ml-2'>
+                Sing Up
+              </Link>
             </div>
           </form>
         </div>

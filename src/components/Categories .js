@@ -30,12 +30,12 @@ function Categories(props) {
     />
   ));
 function leftScrol(){
-    const categ = document.getElementById(props.cateName);
+    const categ = document.getElementById(props?.cateName);
     categ.scrollLeft = categ.scrollLeft - 500;
     
 }
 function rightScrol() {
-  const categ = document.getElementById(props.cateName);
+  const categ = document.getElementById(props?.cateName);
   categ.scrollLeft = categ.scrollLeft + 500;
 }
 
@@ -43,12 +43,13 @@ function rightScrol() {
     axios.get(props.apiUrl).then((res) => {
       setMovies(res.data.results);
     });
-  }, [props.apiUrl]);
+  }, [props?.apiUrl]);
 
   return (
-    <div className='relative  md:ml-8 ml-4 w-full'>
-      <h1 className='w-full pb-2 flex items-center h-12 text-white font-bold text-base'>
-        {props.cateName}
+    <div className='relative   w-full'>
+    
+      <h1 className='w-full md:ml-8 ml-4 pb-3 flex items-center h-8 text-gray-400 font-bold text-base'>
+        {props?.cateName}
       </h1>
       <MdChevronLeft
         onClick={leftScrol}
@@ -56,7 +57,7 @@ function rightScrol() {
         size={40}
       />
       <div
-        id={props.cateName}
+        id={props?.cateName}
         className='w-full h-auto flex gap-4  scroll-smooth  scrollbar-hide overflow-x-scroll flex-nowrap'
       >
         {moviesItems}
