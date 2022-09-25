@@ -16,6 +16,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />} />/
+          <Route path='/netflix-react-app' element={<Home />} />/
           <Route path='/SingIn' element={<SingIn />} />
           <Route path='/SingUp' element={<SingUp />} />
           <Route path='*' element={<ErrorPage />} />
